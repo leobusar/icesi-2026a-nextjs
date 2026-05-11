@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 interface Props {
     params: {
         id: string
@@ -6,7 +8,11 @@ interface Props {
 
 
 export default async function UserDetailPage({params}: Props) {
-  const id =  (await params).id
+  const id: number =  parseInt((await params).id);
+
+  if (id>100)
+    notFound()
+
   return (
     <div className="font-sans grid items-center justify-items-center min-h-screen p-8 ">
       <h1>User detail {id}</h1>
