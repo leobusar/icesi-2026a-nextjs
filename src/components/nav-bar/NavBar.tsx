@@ -1,11 +1,13 @@
 import Link from "next/link"
 import ActiveLink from "../active-link/ActiveLink"
+import { CounterNavBar } from "./Counter"
+
 
 const navItems =  [
     {path: '/about', text: 'About'}, 
     {path: '/user', text: 'User'}, 
     {path: '/profile', text: 'Profile'}, 
-    {path: '/user/777', text: 'User 777'},     
+    {path: '/user', text: 'User'},     
 ]
 
 export const NavBar = () => {
@@ -15,6 +17,7 @@ export const NavBar = () => {
             <span>Home</span>
             </Link>
 
+            <CounterNavBar />
             <div className="flex flex-1"></div>
             {
                 navItems.map(navItem=>(

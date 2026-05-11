@@ -1,4 +1,5 @@
 import { NavBar } from "@/components/nav-bar/NavBar";
+import { CounterStoreProvider } from "@/providers/counter-store-provider";
 
 export default function GeneralLayout({
  children
@@ -6,9 +7,9 @@ export default function GeneralLayout({
  children: React.ReactNode;
 }) {
   return (
-    <div>
+    <CounterStoreProvider>
       <NavBar></NavBar>
       {children}
-    </div>
+    </CounterStoreProvider>
   );
 }
