@@ -1,5 +1,6 @@
 import { NavBar } from "@/components/nav-bar/NavBar";
 import { CounterStoreProvider } from "@/providers/counter-store-provider";
+import { UserStoreProvider } from "@/providers/user-store-provider";
 
 export default function GeneralLayout({
  children
@@ -7,9 +8,11 @@ export default function GeneralLayout({
  children: React.ReactNode;
 }) {
   return (
-    <CounterStoreProvider>
-      <NavBar></NavBar>
-      {children}
-    </CounterStoreProvider>
+    <UserStoreProvider>
+      <CounterStoreProvider>
+        <NavBar></NavBar>
+        {children}
+      </CounterStoreProvider>
+    </UserStoreProvider>
   );
 }

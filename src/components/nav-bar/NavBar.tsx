@@ -7,7 +7,6 @@ const navItems =  [
     {path: '/about', text: 'About'}, 
     {path: '/user', text: 'User'}, 
     {path: '/profile', text: 'Profile'}, 
-    {path: '/user', text: 'User'},     
 ]
 
 export const NavBar = () => {

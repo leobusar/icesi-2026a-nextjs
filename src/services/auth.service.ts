@@ -14,7 +14,7 @@ export class  AuthService {
     }
 
     async login(email: string, password: string): Promise <any> {
-        const response = await this.axios.post('login', {email, password})
+        const response = await this.axios.post('/auth/login', {email, password})
 
         return response.data; 
     }
